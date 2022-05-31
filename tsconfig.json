@@ -12,8 +12,6 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    // esto es para que al atrapar una ecxepcion el tipo de datos que atrape sea any.
-    // lo ideal seria trabajarlas por tipos pero alli si sera con el tiempo
     "useUnknownInCatchVariables": false,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -21,7 +19,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve"
   },
   "include": [
     "src"

@@ -3,6 +3,7 @@ import './App.css';
 import ListadoPeliculas from './Peliculas/ListadoPeliculas';
 import PeliculaInd from './Peliculas/PeliculaInd';
 import { pelicula,landinPage } from './Peliculas/Peliculas.model';
+import Button from './utils/Button';
 
 function App() {
   
@@ -41,14 +42,16 @@ function App() {
 
 // el render
 return(
-  <>
+  <div className='container text-center'>
+    <Button>Mi Componente Boton</Button>
+
     <h3>En Cartelera</h3>
     <ListadoPeliculas peliculas={peliculas.enCartelera}/>
 
     <h3>Proximos Estrenos</h3>
     <ListadoPeliculas peliculas={peliculas.ProximosEstrenos}/>
 
-  </>
+  </div>
   );
 }
 
