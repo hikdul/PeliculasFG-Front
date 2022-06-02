@@ -11,7 +11,7 @@ return(
   <>
     <BrowserRouter>
       <Menu />
-      <div className='Container'>
+      <div className='container mt-1'>
         <Switch>
           {rutas.map(ruta=>
             <Route key={ruta.path} path={ruta.path} exact={ruta.exact} >
