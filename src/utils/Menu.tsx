@@ -1,4 +1,6 @@
-import { NavLink } from "react-router-dom";
+
+
+import {NavLink} from 'react-router-dom';
 
 export default function Menu() {
   const ActClass = "active";
@@ -16,9 +18,25 @@ export default function Menu() {
                 Generos
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" activeClassName={ActClass} to="/Peliculas/filtrar" >
+                filtrar Peliculas
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" activeClassName={ActClass} to="/Cines" >
+                Cines
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" activeClassName={ActClass} to="/Peliculas/Create" >
+                Crear Pelicula
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
   );
+
 }
