@@ -4,6 +4,13 @@ import './App.css';
 import rutas from './RouteConfig';
 import Menu from './utils/Menu';
 
+/// ###=====> ### <======###
+/// aqui traigo la clase donde genere mis validaciones 
+import ConfigurateValidations from './Validaciones';
+/// aqui corro mi funcion al menos una ves
+ConfigurateValidations()
+/// ###=====> ### <======###
+
 function App() {
 
 // el render
