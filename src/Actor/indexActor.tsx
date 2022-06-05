@@ -2,5 +2,10 @@
 
  export default function IndexActor()
  {
-     return<>Index Actor</>
+     return(
+        <h3>Index Actor</h3>
+        
+     
+     )
+     
  }
