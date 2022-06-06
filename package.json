@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-leaflet/core": "1.0.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,8 +14,10 @@
     "@types/react-router-dom": "^5.3.3",
     "bootstrap": "4.6",
     "formik": "^2.2.6",
+    "leaflet": "1.7.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-leaflet": "3.1.0",
     "react-markdown": "^8.0.3",
     "react-router-dom": "5.2",
     "react-scripts": "4.0.3",
@@ -46,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.7.10"
   }
 }

@@ -46,10 +46,12 @@ export default function FormularioActores(props: FormularioActoresProps )
                                 field="fechaNacimiento"
                                label="Ingrese Fecha De Nacimiento"/>
                         </div>
+                        <div className="col-12">
                         <FormGroupImage 
                             field="foto"
                             label="Foto Actor"
                             imageURL={props.modelo.fotoUrl}/>
+                        </div>
                         <FormGroupMarkDown 
                             field="biografia"
                             label="Biografia"/>
