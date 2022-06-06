@@ -33,19 +33,28 @@ export default function FormularioActores(props: FormularioActoresProps )
             })}>
             {(formikProps)=>(
                 <Form>
-                    <FormGroupText 
-                        field="nombre"
-                        label="Nombre"/>
-                    <FormGroupFecha 
-                        field="fechaNacimiento"
-                       label="Ingrese Fecha De Nacimiento"/>
-                    <FormGroupImage 
-                        field="foto"
-                        label="Foto Actor"
-                        imageURL={props.modelo.fotoUrl}/>
-                    <FormGroupMarkDown 
-                        field="biografia"
-                        label="Biografia"/>
+                    <div className="row">
+
+                        <div className="col-md-6">
+                            <FormGroupText 
+                                field="nombre"
+                                label="Nombre"/>
+                        </div>
+
+                        <div className="col-md-6">
+                            <FormGroupFecha 
+                                field="fechaNacimiento"
+                               label="Ingrese Fecha De Nacimiento"/>
+                        </div>
+                        <FormGroupImage 
+                            field="foto"
+                            label="Foto Actor"
+                            imageURL={props.modelo.fotoUrl}/>
+                        <FormGroupMarkDown 
+                            field="biografia"
+                            label="Biografia"/>
+
+                    </div>
 
                     <Button 
                         disabled={formikProps.isSubmitting}

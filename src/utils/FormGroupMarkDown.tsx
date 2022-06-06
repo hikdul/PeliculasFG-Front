@@ -7,20 +7,24 @@ export default function FormGroupMarkDown(props: FormGroupMarkDownProps)
     const {values} = useFormikContext<any>()
 
   return(
+    <div className="row">
     <div className="form-grop form-markdown">
+        <div className="col-md-6">
+
             <label>{props.label}</label>
-        <div>
+
             <Field 
                 name={props.field}     
                 as="textarea"
                 className="form-textarea"/>
         </div>
-        <div>
+        <div className="col-md-6">
             <label> {props.label} (Preview)</label>
             <div className="markdown-container">
                 <ReactMarkdown>{values[props.field]}</ReactMarkdown>
             </div>
         </div>
+    </div>
     </div>
   )
 }
