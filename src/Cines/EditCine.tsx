@@ -5,7 +5,9 @@ import FormCines from "./FormCines"
  {
 
      const model: cineCreacionDTO={
-         nombre:'Sambil'
+         nombre:'Cine La Grita',
+        latitud: 8.137421275889883,
+        longitud: -71.98655891437284
      }
 
      return(

@@ -5,6 +5,8 @@ import FormGroupText from "../utils/FormGroupText"
 import Button from "../utils/Button"
 import { Link } from "react-router-dom"
 import Mapa from "../utils/mapa"
+import MapaFormulario from "../utils/MapaFormulario"
+import { CoordenadaDTO } from "../utils/Coordenada"
 
 export default function FormCines(props: FormCinesProps)
 {
@@ -15,7 +17,20 @@ export default function FormCines(props: FormCinesProps)
             .required("El Nombre Del Cine Es Obligatorio")
             .FirtsLetterMay()
     })
-    
+
+    function transformCoordinates():CoordenadaDTO[] | undefined
+    {
+        if(props.model.latitud && props.model.longitud)
+        {
+            const resp:CoordenadaDTO ={
+                lat: props.model.latitud,
+                lng: props.model.longitud
+            }
+            return [resp]
+        }
+       return undefined
+    }
+
     return(
         <Formik
          initialValues={props.model}
@@ -25,7 +40,10 @@ export default function FormCines(props: FormCinesProps)
                  <Form>
                      <FormGroupText field="nombre" label="Ingrese Nombre Del Cine"/>
                     <div style={{marginBottom: '1rem'}}>
-                        <Mapa />
+                        <MapaFormulario 
+                            campoLat="latitud" 
+                            campoLon="longitud"
+                            coordenadas={transformCoordinates()} />
                     </div>
                     <Button
                         disabled={formikProps.isSubmitting}
