@@ -11,3 +11,13 @@ export interface landinPage{
     ProximosEstrenos?: pelicula[]
 
 }
+
+export interface PeliculaDTO_in
+{
+    titulo: string
+    enCines: boolean
+    trailer: string
+    fechaLaszamiento?: Date
+    poster?: File
+    posterURL?: string
+}

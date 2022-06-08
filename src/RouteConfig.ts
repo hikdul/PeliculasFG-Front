@@ -8,14 +8,16 @@ import CreateGenero from "./Generos/CreateGenero"
 import EditGenero from "./Generos/EditGenero"
 import indexGeneros from "./Generos/IndexGeneros"
 import LandingPage from "./landingPage"
+import CreatePelicula from "./Peliculas/CreatePelicula"
+import EditPelicula from "./Peliculas/EditPelicula"
 import FiltroPeliculas from "./Peliculas/FiltroPeliculas"
 import NotFoundPage from "./utils/NotFoundPage"
 
 const rutas =
 [
 
-    {path:'/Peliculas/Create', component: CreateGenero},
-    {path:'/Peliculas/Edit/:id(\\d+)', component: EditGenero},
+    {path:'/Peliculas/Create', component: CreatePelicula},
+    {path:'/Peliculas/Edit/:id(\\d+)', component: EditPelicula},
     {path:'/Peliculas/Filtrar', component: FiltroPeliculas},
     
     {path:'/Generos/Create', component: CreateGenero},
