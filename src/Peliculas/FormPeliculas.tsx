@@ -2,6 +2,8 @@ import { Form, Formik, FormikHelpers } from "formik"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import * as Yup from 'yup'
+import { actorPeliculaDTO } from "../Actor/Actor.model"
+import TypeAheadActores from "../Actor/TypeAheadActores"
 import { cineDTO } from "../Cines/Cines.model"
 import { generoDTO } from "../Generos/Generos.model"
 import Button from "../utils/Button"
@@ -14,6 +16,13 @@ import { PeliculaDTO_in } from "./Peliculas.model"
 
 export default function FormPeliculas(props: FormPeliculasProps)
 {
+
+    const actores: actorPeliculaDTO[]=[
+        {id:1, nombre:'hector de leon', personaje:"el loco de los perros", foto: 'https://pbs.twimg.com/profile_images/1523017006236291072/NihCEM3d_400x400.jpg'},
+        {id:2, nombre:'hector Contreras', personaje:"el loco de los perros", foto: 'https://pbs.twimg.com/profile_images/1523017006236291072/NihCEM3d_400x400.jpg'},
+        {id:3, nombre:'luis cerrada', personaje:"El jefe loquito", foto:'https://media-exp1.licdn.com/dms/image/C4E03AQG69B8EDWVgaA/profile-displayphoto-shrink_200_200/0/1536988170687?e=1659571200&v=beta&t=kDLxGBnc1m7iE3oRtqE83RIav1XD0cSkvE4_KE2DlT0'}
+    ]
+
     const [GenSel,setGenSel]=useState(mapear(props.GenerosSelect))
     const [NoGenSel,setNoGenSel]=useState(mapear(props.GeneroNoSelect))
     const [CineSel,setCineSel]= useState(mapear(props.CineSel))
@@ -83,6 +92,11 @@ export default function FormPeliculas(props: FormPeliculasProps)
                                             setCineSelNo(noSeleccionados)
                                         }}/>
                                         
+                                </div>
+                            </div>
+                            <div className="col-12">
+                                <div className="form-group">
+                                    <TypeAheadActores actores={actores}/>
                                 </div>
                             </div>
                             <div className="col-12">

@@ -8,3 +8,11 @@ export interface actorDTO_in
     fotoUrl?:string
     biografia:string
 }
+
+export interface actorPeliculaDTO
+{
+    id: number
+    nombre: string
+    personaje: string
+    foto: string
+}

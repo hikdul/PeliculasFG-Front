@@ -16,6 +16,7 @@
     "formik": "^2.2.6",
     "leaflet": "1.7.1",
     "react": "17.0.2",
+    "react-bootstrap-typeahead": "^5.1.4",
     "react-dom": "17.0.2",
     "react-leaflet": "3.1.0",
     "react-markdown": "^8.0.3",
@@ -51,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@types/leaflet": "^1.7.10"
+    "@types/leaflet": "^1.7.10",
+    "@types/react-bootstrap-typeahead": "^5.1.4"
   }
 }
