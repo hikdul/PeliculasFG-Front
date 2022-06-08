@@ -20,4 +20,6 @@ export interface PeliculaDTO_in
     fechaLaszamiento?: Date
     poster?: File
     posterURL?: string
+    generosIds?: number[]
+    cinesIds?:number[]
 }
