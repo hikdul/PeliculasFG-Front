@@ -14,7 +14,10 @@ export default function FormGeneros(props: FormGenerosProps)
             initialValues={props.modelo}
             onSubmit={props.onSubmit}
             validationSchema={Yup.object({
-                nombre:Yup.string().required("ingrese un nombre para Genero")
+                nombre:Yup
+                    .string()
+                    .max(50, 'La longitud maxima es de 50 Caracteres.')
+                    .required("ingrese un nombre para Genero")
                     .FirtsLetterMay()
         })}>
             {(formikProps)=>
