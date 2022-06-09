@@ -1,3 +1,4 @@
+import { actorPeliculaDTO } from "../Actor/Actor.model"
 
 export interface pelicula
 {
@@ -22,4 +23,5 @@ export interface PeliculaDTO_in
     posterURL?: string
     generosIds?: number[]
     cinesIds?:number[]
+    actores?:actorPeliculaDTO[]
 }

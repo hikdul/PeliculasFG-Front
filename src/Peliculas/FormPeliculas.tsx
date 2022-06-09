@@ -17,16 +17,11 @@ import { PeliculaDTO_in } from "./Peliculas.model"
 export default function FormPeliculas(props: FormPeliculasProps)
 {
 
-    const actores: actorPeliculaDTO[]=[
-        {id:1, nombre:'hector de leon', personaje:"el loco de los perros", foto: 'https://pbs.twimg.com/profile_images/1523017006236291072/NihCEM3d_400x400.jpg'},
-        {id:2, nombre:'hector Contreras', personaje:"el loco de los perros", foto: 'https://pbs.twimg.com/profile_images/1523017006236291072/NihCEM3d_400x400.jpg'},
-        {id:3, nombre:'luis cerrada', personaje:"El jefe loquito", foto:'https://media-exp1.licdn.com/dms/image/C4E03AQG69B8EDWVgaA/profile-displayphoto-shrink_200_200/0/1536988170687?e=1659571200&v=beta&t=kDLxGBnc1m7iE3oRtqE83RIav1XD0cSkvE4_KE2DlT0'}
-    ]
-
     const [GenSel,setGenSel]=useState(mapear(props.GenerosSelect))
     const [NoGenSel,setNoGenSel]=useState(mapear(props.GeneroNoSelect))
     const [CineSel,setCineSel]= useState(mapear(props.CineSel))
     const [CineSelNo,setCineSelNo]= useState(mapear(props.CineNoSel))
+    const [ActoresSel, setActoresSel]= useState<actorPeliculaDTO[]>(props.ActoresSeleccionados);
 
     function mapear(array:{id:number, nombre:string}[]): MultiSelectModel[]
     {
@@ -47,6 +42,7 @@ export default function FormPeliculas(props: FormPeliculasProps)
             onSubmit={ (values,actions)=>{
                 values.generosIds=GenSel.map(v=>v.key)
                 values.cinesIds=CineSel.map(v=>v.key)
+                values.actores = ActoresSel
                 props.onSubmit(values,actions)
             }}
             validationSchema={validatinSchema}>
@@ -96,7 +92,40 @@ export default function FormPeliculas(props: FormPeliculasProps)
                             </div>
                             <div className="col-12">
                                 <div className="form-group">
-                                    <TypeAheadActores actores={actores}/>
+                                    <TypeAheadActores 
+                                        onAdd={actores=>{
+                                            setActoresSel(actores)
+                                        }}
+                                        onRemove={actor=>{
+                                            const axu= ActoresSel.filter(x=>x!==actor)
+                                            setActoresSel(axu)
+                                        }}
+                                        listadoUI={
+                                            (actor:actorPeliculaDTO)=><>
+                                            <div className="m-1">
+                                            <img 
+                                                alt="foto actor" 
+                                                src={actor.foto}
+                                                style={{
+                                                    height:'64px',
+                                                    marginRight: '10px',
+                                                    width: '64px'
+                                                }} />
+                                                {actor.nombre} / 
+                                                <input 
+                                                    placeholder="Personaje"
+                                                    type="text"
+                                                    value={actor.personaje}
+                                                    onChange={e=>{
+                                                        const index= ActoresSel.findIndex(x=>x.id===actor.id)
+                                                        const actores = [...ActoresSel]
+                                                        actores[index].personaje = e.currentTarget.value
+                                                        setActoresSel(actores)
+                                                    }}/>
+                                            </div>
+                                            </>
+                                        }
+                                        actores={ActoresSel}   />
                                 </div>
                             </div>
                             <div className="col-12">
@@ -118,4 +147,5 @@ interface FormPeliculasProps
     GeneroNoSelect: generoDTO[]
     CineSel:cineDTO[]
     CineNoSel:cineDTO[]
+    ActoresSeleccionados: actorPeliculaDTO[]
 }

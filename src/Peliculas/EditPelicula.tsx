@@ -1,3 +1,4 @@
+import { actorPeliculaDTO } from "../Actor/Actor.model";
 import { cineDTO } from "../Cines/Cines.model";
 import { generoDTO } from "../Generos/Generos.model";
 import FormPeliculas from "./FormPeliculas";
@@ -6,6 +7,9 @@ import { PeliculaDTO_in } from "./Peliculas.model";
  export default function EditPelicula()
  {
 
+    const actoresSel: actorPeliculaDTO[]=[
+        {id:2, nombre:'hector Contreras', personaje:"el loco de los perros", foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmMSdBqMZWZXzTWDNlrmFmpHuZIXvkxCnL3l7umZWnc9zbkoP8MNCWc5AJ-C40Uitkke8&usqp=CAU'}
+    ]
     const CinesA:cineDTO[]=[
         {id:3, nombre:'Agora'},
         {id:4, nombre:'lago Mall'},
@@ -39,7 +43,8 @@ import { PeliculaDTO_in } from "./Peliculas.model";
                 GenerosSelect={generosLLeno}
                 CineSel={CinesA}
                 CineNoSel={Cinesb}
-                GeneroNoSelect={generosVacion} />
+                GeneroNoSelect={generosVacion} 
+                ActoresSeleccionados={actoresSel}/>
         </>
     )
  }

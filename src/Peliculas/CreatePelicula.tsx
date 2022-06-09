@@ -36,7 +36,8 @@ import { PeliculaDTO_in } from "./Peliculas.model";
                 GenerosSelect={generosLLeno}
                 GeneroNoSelect={generosVacion} 
                 CineSel={CinesA}
-                CineNoSel={Cinesb}/>
+                CineNoSel={Cinesb}
+                ActoresSeleccionados={[]}/>
          </>
      )
  }
