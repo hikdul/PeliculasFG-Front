@@ -20,8 +20,8 @@ export default function Paginacion(props: paginacionProps)
             activo : false
         })
         
-        for (let i = 0; i <= props.cantidadTotalDePaginas.length; i++) {
-            if(i>= props.paginaActual - props.radio && i <= props.paginaActual + props.radio)
+        for (let i = 1; i <= props.cantidadTotalDePaginas; i++) {
+            if( i>= props.paginaActual - props.radio && i < props.paginaActual + props.radio)
                 links.push({
                     texto:  i.toString(),
                     activo: props.paginaActual===i,
@@ -35,7 +35,7 @@ export default function Paginacion(props: paginacionProps)
         links.push({
             texto: 'Next',
             pagina: paginaSiguiente,
-            habilitado: paginaAnteriorHabilitada,
+            habilitado: paginaSiguienteHabilitada,
             activo: false
         })
         setListLinks(links)
